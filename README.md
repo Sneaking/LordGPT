@@ -2,7 +2,7 @@
 Autonomous AI Assistant fully capable of performing tasks on its own.
 JOIN US ON DISCORD: https://discord.com/channels/1099871467426025602/1099871467426025605
 
-UPDATE: GPT3.5 Is just pretending to do everything. Working on a new prompt just for GPT3.5
+UPDATE: GPT3.5 Is just pretending to do everything. Working on a new prompt just for GPT3.5 GPT3.5 wasnt tested near as much as GPT4, so keep an open mind.
 
 WELCOME LordGPT is an automated AI Assistant that can accomplish a wide range of tasks.
 - Browse Internet and Research.
