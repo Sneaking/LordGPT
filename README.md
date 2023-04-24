@@ -38,14 +38,6 @@ RUN THESE BASH COMMANDS, COPY AND PASTE
 3. type git clone GITURL
 4. cd LordGPT
 5. pip install -r requirements.txt - Sorry for the long requirements, its my dev machine.
-6. cd /tmp/
-7. wget https://chromedriver.storage.googleapis.com/2.37/chromedriver_linux64.zip
-8. unzip chromedriver_linux64.zip
-9. sudo mv chromedriver /usr/bin/chromedriver
-10. wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-11. sudo dpkg -i google-chrome-stable_current_amd64.deb
-12. sudo apt-get install -f
-11. mv /usr/bin/google-chrome-stable /usr/bin/google-chrome
-12. Verify chrome google-chrome --version && which google-chrome
+7. python3 LordGPT.py
 
 
