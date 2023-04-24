@@ -1014,7 +1014,7 @@ def openai_bot_handler(current_prompt, message, role):
 
     if success == True:
         return handler_response
-    return handler_response + "Respond with valid json"
+    return handler_response
 
 
 # endregion
