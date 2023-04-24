@@ -539,7 +539,7 @@ def create_python_script(
                 command_string,
                 command_argument,
                 current_task,
-                "Research why my command failed",
+                "Try again using the correct arguments.",
                 goal_status,
             )
 
@@ -568,8 +568,8 @@ def create_python_script(
             f"Error: {str(e)}",
             command_string,
             command_argument,
-            "Retry or Reserch Current Task",
-            next_task,
+            current_task,
+            "Research why the command failed or try another approach.",
             goal_status,
         )
 
@@ -600,7 +600,7 @@ def write_new_content_to_file(
                 command_string,
                 command_argument,
                 current_task,
-                "Research why my command failed",
+                "Try the command again using the correct arguments.",
                 goal_status,
             )
 
@@ -615,7 +615,7 @@ def write_new_content_to_file(
 
         set_global_success(True)
         return create_json_message(
-            f"File created and saved successfully\n{content}",
+            f"File {filename} created and saved successfully\n{content}",
             command_string,
             command_argument,
             current_task,
@@ -868,7 +868,7 @@ def scrape_website_url(
 
     except Exception as e:
         return create_json_message(
-            "Error: " + f"Error: {str(e)}",
+            "Error: " + {str(e)},
             command_string,
             command_argument,
             current_task,
@@ -877,7 +877,7 @@ def scrape_website_url(
         )
 
     return create_json_message(
-        "Website Content: " + content_json_escaped,
+        "URL: " + command_argument + "Content: " + content_json_escaped,
         command_string,
         command_argument,
         current_task,
