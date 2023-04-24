@@ -17,7 +17,7 @@ botcommands = [
     {
         "command_string": "create_python_script",
         "command_argument": "Filename: [FILENAME] Content: [CONTENT]",
-        "command_description": "Writes and saves a formatted non interactive python script that do not require API keys. Replace '[FILENAME]' with the desired filename and '[CONTENT]' with the formatted python script (using triple quotes)."
+        "command_description": "Writes and saves a formatted python script that do not require API keys. Replace '[FILENAME]' with the desired filename and '[CONTENT]' with the formatted python script (using triple quotes). Ensure you create a full working script with correct import modules, and verify non interactive scripts."
     },
     {
         "command_string": "write_new_content_to_file",
