@@ -531,7 +531,6 @@ def create_python_script(
         if match:
             filename = match.group(1)
             content = match.group(2)
-            content = content.replace("\n", "\n")
         else:
             set_global_success(False)
             return create_json_message(
@@ -543,7 +542,6 @@ def create_python_script(
                 goal_status,
             )
 
-
         os.makedirs(working_folder, exist_ok=True)
         file_path = os.path.join(working_folder, filename)
 
@@ -553,7 +551,7 @@ def create_python_script(
         set_global_success(True)
 
         return create_json_message(
-            f"Python code created and saved successfully:\nFilename: {filename}\nContent: {command_argument}",
+            f"Python code created and saved successfully:\nFilename: {filename}\nContent:\n```\n{content}\n```",
             command_string,
             command_argument,
             current_task,
@@ -572,6 +570,7 @@ def create_python_script(
             "Research why the command failed or try another approach.",
             goal_status,
         )
+
 
 
 # endregion
