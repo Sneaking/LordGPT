@@ -863,8 +863,7 @@ def scrape_website_url(
         debug_log(content)
         # Add slicing to limit content length
         content_cleaned = remove_illegal_chars(content)[:max_characters]
-        content_compressed = content_cleaned.encode("utf-8")
-        content_json_escaped = json.dumps(content_compressed)
+        content_json_escaped = json.dumps(content_cleaned)
 
     except Exception as e:
         return create_json_message(
