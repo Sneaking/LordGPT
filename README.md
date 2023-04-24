@@ -40,4 +40,20 @@ RUN THESE BASH COMMANDS, COPY AND PASTE
 5. pip install -r requirements.txt - Sorry for the long requirements, its my dev machine.
 7. python3 LordGPT.py
 
+MAC USERS
+1. Open Terminal
+2. /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+3. export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+4. brew install python
+5. pip3 install -r requirements.txt
+6. pip3 install requests
+7. pip3 install termcolor
+8. pip3 install beautifulsoup4
+9. pip3 install PyPDF2
+10. pip3 install jsmin
+11. pip3 install fake-useragent
+12. pip3 install pdfkit
+13. pip3 install tiktoken
+14. Now setup your .env
+
 
