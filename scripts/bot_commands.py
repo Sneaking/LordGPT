@@ -10,6 +10,11 @@ botcommands = [
         "command_description": "Used when you do not need to use a command"
     },
     {
+        "command_string": "create_pdf_from_html_markup",
+        "command_argument": "Filename: [FILENAME] Content: [CONTENT]",
+        "command_description": "Create PDF's by sending formatted HTML as the content along with any research data."
+    },
+    {
         "command_string": "create_python_script",
         "command_argument": "Filename: [FILENAME] Content: [CONTENT]",
         "command_description": "Writes and save a formatted python script that does not require an API key to execute. Replace '[FILENAME]' with the desired filename and '[CONTENT]' with the formatted python script as a multiline string using triple, double quotes.. Do not send \line breaks. Ensure you create a full working script with correct import modules, and verify non interactive scripts."
@@ -57,7 +62,7 @@ botcommands = [
     {
         "command_string": "mission_accomplished",
         "command_argument": "Mission accomplishment message",
-        "command_description": "Use this command only if the goal has been 100% completed. If you were unable to complete steps, you must find another way as the goal will not be complete."
+        "command_description": "Use this command only after the entire goal has been verified and completed 100%."
     },
 ]
 
