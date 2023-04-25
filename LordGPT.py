@@ -118,7 +118,7 @@ if getattr(sys, 'frozen', False):
     debug_code = True
     api_throttle = 10
     api_retry = 10
-    api_timeout = 60
+    api_timeout = 90
     api_count = 0
 
     if os.path.exists(config_file):
@@ -144,7 +144,7 @@ else:
     debug_code = bool(os.getenv("DEBUG_CODE", "False"))
     api_throttle = int(os.environ.get("API_THROTTLE", 10))
     api_retry = int(os.environ.get("API_RETRY", 10))
-    api_timeout = int(os.environ.get("API_TIMEOUT", 60))
+    api_timeout = int(os.environ.get("API_TIMEOUT", 90))
     google_api_key = os.environ["GOOGLE_API_KEY"]
     google_search_id = os.environ["CUSTOM_SEARCH_ENGINE_ID"]
 
@@ -161,8 +161,6 @@ def debug_log(message):
 # Alternate API calls between Azure and OpenAI
 
 # API settings, set throttle lower if using alternate to speed up API calls
-
-
 
 def alternate_api(number):
     global api_count
@@ -319,7 +317,7 @@ def query_bot(messages, retries=20):
             }
 
             botresponse = requests.request(
-                "POST", api_url, headers=headers, data=json_payload, timeout=45
+                "POST", api_url, headers=headers, data=json_payload, timeout=api_timeout
             )
             debug_log(f"Returned Response from OpenAI: {botresponse.status_code}")
             debug_log(botresponse)
