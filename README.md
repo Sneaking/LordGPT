@@ -2,6 +2,10 @@
 Autonomous AI Assistant fully capable of performing tasks on its own.
 JOIN US ON DISCORD: https://discord.gg/mhGtn6fb
 
+UPDATE2: I'm releasing a Windows EXE and MAC PKG for all you noobies here later today ;) Simply download the EXE and run it to get access to the Lord.
+
+
+
 UPDATE: GPT3.5 Is just pretending to do everything. Working on a new prompt just for GPT3.5 GPT3.5 wasnt tested near as much as GPT4, so keep an open mind.
 
 WELCOME LordGPT is an automated AI Assistant that can accomplish a wide range of tasks.
