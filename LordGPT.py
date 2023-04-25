@@ -567,7 +567,7 @@ def create_python_script(
             command_string,
             command_argument,
             current_task,
-            "Research why the command failed or try another approach.",
+            "Read the contents of the script to ensure its formatted correctly, or reserach the internet on the error.",
             goal_status,
         )
 
@@ -639,25 +639,55 @@ def write_new_content_to_file(
 
 # region ## APPEND CONTENT TO FILE ##
 
-
 def append_content_to_existing_file(
     response, command_string, command_argument, current_task, next_task, goal_status
 ):
-    
-    filename, content = command_argument.split(": ", 1)
-    file_path = os.path.join(working_folder, filename)
+    try:
+        # Extract filename and content using regex
+        regex_pattern = r'Filename:\s*(\S+)\s+Content:\s*"""(.*?)"""'
+        match = re.search(regex_pattern, command_argument, re.DOTALL)
 
-    with open(file_path, "a") as file:
-        file.write(content + "\n")
+        if match:
+            filename = match.group(1)
+            content = match.group(2)
+        else:
+            set_global_success(False)
+            return create_json_message(
+                "Invalid args. Use the Format: Filename: [FILENAME] Content: [CONTENT]",
+                command_string,
+                command_argument,
+                current_task,
+                "Try again using the correct arguments.",
+                goal_status,
+            )
 
-    return create_json_message(
-        "File content successfully appended to " + filename,
-        command_string,
-        command_argument,
-        current_task,
-        next_task,
-        goal_status,
-    )
+        if not os.path.exists(working_folder):
+            os.makedirs(working_folder)
+
+        file_path = os.path.join(working_folder, filename)
+
+        with open(file_path, "a") as file:
+            file.write(content + "\n")
+
+        return create_json_message(
+            "File content successfully appended to " + filename,
+            command_string,
+            command_argument,
+            current_task,
+            next_task,
+            goal_status,
+        )
+    except Exception as e:
+        set_global_success(False)
+        debug_log(f"Error: {str(e)}")
+        return create_json_message(
+            f"Error: {str(e)}",
+            command_string,
+            command_argument,
+            "Retry or Reserch Current Task",
+            next_task,
+            goal_status,
+        )
 
 
 # endregion
