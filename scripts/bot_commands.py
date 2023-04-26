@@ -57,7 +57,12 @@ botcommands = [
     {
         "command_string": "run_bash_shell_command",
         "command_argument": "[BASH COMMAND]",
-        "command_description": "Execute non-interactive ubuntu bash shell commands or python scripts to fully manage the system you are on. Pass the BASH command as a command_argument or python3 to run python."
+        "command_description": "Execute non-interactive bash commands or python scripts to fully manage the system you are on. Pass the BASH COMMAND as a command_argument, determine if you are on linux."
+    },
+    {
+        "command_string": "run_win_shell_command",
+        "command_argument": "[WIN COMMAND]",
+        "command_description": "Execute non-interactive windows commands or python scripts to fully manage the system you are on. Pass the WIN COMMAND as a command_argument, determine if you are on windows."
     },
     {
         "command_string": "mission_accomplished",

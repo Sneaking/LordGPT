@@ -499,6 +499,92 @@ def run_bash_shell_command(
 
 # endregion
 
+#region ### WINDOWS COMMANDS ###
+
+import subprocess
+
+def run_win_shell_command(
+    response, command_string, command_argument, current_task, next_task, goal_status
+):
+    process = subprocess.Popen(
+        command_argument,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        shell=True,
+        cwd=working_folder  # Set the working directory here
+    )
+
+    try:
+        # Set a timeout value (in seconds) for the command execution
+        timeout_value = 120
+        output, error = process.communicate(timeout=timeout_value)
+    except subprocess.TimeoutExpired:
+        process.kill()
+        set_global_success(False)
+        return create_json_message(
+            "Command execution timed out.",
+            command_string,
+            command_argument,
+            "I should research the error",
+            next_task,
+            goal_status,
+        )
+
+    return_code = process.returncode
+    debug_log(f"Return Code: {return_code}")
+
+    shell_response = ""
+
+    if "mkdir" in command_argument.lower():
+        if return_code == 0:
+            set_global_success(True)
+            shell_response = "Folder created successfully. " + command_argument
+        elif (
+            return_code == 1
+            and "Folder already exists navigate to folder." in error.decode("utf-8")
+        ):
+            set_global_success(True)
+            shell_response = (
+                "Folder already exists. Try switching to folder. " + command_argument
+            )
+        else:
+            shell_response = f"Error creating folder, research the error: {error.decode('utf-8').strip()}"
+
+    elif "echo" in command_argument.lower() and ">" in command_argument:
+        if return_code == 0:
+            set_global_success(True)
+            shell_response = "File created and saved successfully. " + command_argument
+        else:
+            set_global_success(False)
+            shell_response = f"Error creating file, Research the error: {error.decode('utf-8').strip()}"
+
+    else:
+        if return_code == 0:
+            set_global_success(True)
+            # Add slicing to limit output length
+            shell_response = (
+                "Shell Command Output: "
+                + f"{output.decode('utf-8').strip()}"[:max_characters]
+            )
+        else:
+            set_global_success(False)
+            # Add slicing to limit error length
+            shell_response = f"Shell Command failed, research the error: {error.decode('utf-8').strip()}"[
+                :max_characters
+            ]
+
+    debug_log(shell_response)
+    return create_json_message(
+        "Windows Command Output: " + shell_response,
+        command_string,
+        command_argument,
+        "I should analyze the output to ensure success and research any errors",
+        next_task,
+        goal_status,
+    )
+
+#endregion
+
 # region ### ALLOWS MODEL TO CONTINUE ###
 
 
