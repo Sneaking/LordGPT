@@ -1245,7 +1245,7 @@ def main_loop():
         print(colored("Goal: " + user_goal, "green"))
     set_global_success(True)
 
-    bot_send = openai_bot_handler(bot_prompt + user_goal, "", "assistant")
+    bot_send = openai_bot_handler(bot_prompt + user_goal, "go", "assistant")
 
     while True:
         num_input = input(
