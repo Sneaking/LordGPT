@@ -1,11 +1,28 @@
 # LordGPT
 Autonomous AI Assistant fully capable of performing tasks on its own.
-JOIN US ON DISCORD: https://discord.gg/mhGtn6fb
 
-UPDATE 4/25/2023 - Windows Binary
-- Windows Binary for non tech people, packaged with pyinstaller
-- Instructions here: https://1drv.ms/w/s!AudyeVtUbcqvkO1QNLBNAlGijETAiw?e=thWIGj
+The bundle still requires that you have an OpenAI and Google Search key.
 
+OpenAI API: 
+1. Sign up for OpenAI; the first $15 is free: https://platform.openai.com/account/api-keys
+2. Once logged in, click your profile in the upper right.
+3. Choose "API Keys."
+4. Generate an API key and save it somewhere; you won't be able to see it again.
+
+Google Search API:
+1. Sign up for a Gmail account if you don’t already have one. 2. Visit https://cloud.google.com/.
+3. Go to "API & Services" and choose "Credentials."
+4. Choose "Create Credentials" at the top and select "API key."
+5. Save the API in Notepad, along with the OpenAI key.
+6. Now visit the left menu again, select "API & Services," and choose "Enabled API & Services."
+7. At the top of the page, select "+Enable API and Services."
+8. In the search type "Custom Search."
+9. Enable the API and choose "Manage."
+10. Now visit Programmable Search - All search engines (google.com).
+11. Click "Add" and give your search engine a name and select "Entire web," then click "Create."
+12. Now copy the code after "cse.js." Example: "ccse.js?cx=e14a5ff417c4b26"
+
+Choose "GPT-3.5-Turbo" unless you have GPT-4. Note: You’ll get errors if you try GPT-4 without access.
 
 WELCOME LordGPT is an automated AI Assistant that can accomplish a wide range of tasks.
 - Browse Internet and Research.
@@ -31,10 +48,6 @@ REQUIREMENTS:
 - Google Search API for searching.
 - Deep pockets for tokens.
 
-WINDOWS BINARY:
-Easiest way for windows users is to use the EXE. 
-Instructions here: https://tinyurl.com/LordGPT-Instructions
-
 MANUAL WINDOWS INSTALL
 1. Enable WSL dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 2. Install WSL by running the following command: wsl --install
@@ -48,24 +61,5 @@ RUN THESE BASH COMMANDS, COPY AND PASTE
 4. cd LordGPT
 5. pip install -r requirements.txt - Sorry for the long requirements, its my dev machine.
 7. python3 LordGPT.py
-
-MAC BINARY:
-- Coming Soon
-
-MAC USERS
-1. Open Terminal
-2. /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-3. export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-4. brew install python
-5. pip3 install -r requirements.txt
-6. pip3 install requests
-7. pip3 install termcolor
-8. pip3 install beautifulsoup4
-9. pip3 install PyPDF2
-10. pip3 install jsmin
-11. pip3 install fake-useragent
-12. pip3 install pdfkit
-13. pip3 install tiktoken
-14. Now setup your .env
 
 
