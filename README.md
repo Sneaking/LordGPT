@@ -2,11 +2,10 @@
 Autonomous AI Assistant fully capable of performing tasks on its own.
 JOIN US ON DISCORD: https://discord.gg/mhGtn6fb
 
-UPDATE2: I'm releasing a Windows EXE and MAC PKG for all you noobies here later today ;) Simply download the EXE and run it to get access to the Lord.
+UPDATE 4/25/2023 - Windows Binary
+- Windows Binary for non tech people, packaged with pyinstaller
+- Instructions here: https://1drv.ms/w/s!AudyeVtUbcqvkO1QNLBNAlGijETAiw?e=thWIGj
 
-
-
-UPDATE: GPT3.5 Is just pretending to do everything. Working on a new prompt just for GPT3.5 GPT3.5 wasnt tested near as much as GPT4, so keep an open mind.
 
 WELCOME LordGPT is an automated AI Assistant that can accomplish a wide range of tasks.
 - Browse Internet and Research.
@@ -24,7 +23,7 @@ Releasing a binary shortly to run LordGPT directly on windows without any of the
 KNOWN ISSUES:
 1. My python code is not optimized, no need to tell me. Join and help or post an issue.
 2. Hallucinates and pretends to do things when the goal is too vague. I'm mostly fixed this but it happens randomly. Decrease the temp and top_p helps.
-3. API Timeouts, nothing I can do. Apply for Azure GPT-4 and use the new ALTERNATE feature. Works great..
+3. API Timeouts, nothing I can do. Apply for Azure GPT-4 and use the new ALTERNATE feature.Works great..
 4. The prompts were built with my thinking mind, with that said you might prompt it to do things I didnt think of.
 
 
@@ -32,7 +31,11 @@ REQUIREMENTS:
 - Google Search API for searching.
 - Deep pockets for tokens.
 
-INSTALLATION WINDOWS:
+WINDOWS BINARY:
+Easiest way for windows users is to use the EXE. 
+Instructions here: https://tinyurl.com/LordGPT-Instructions
+
+MANUAL WINDOWS INSTALL
 1. Enable WSL dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 2. Install WSL by running the following command: wsl --install
 3. Follow the on-screen instructions to install your desired Linux distribution from the Microsoft Store.
@@ -45,6 +48,9 @@ RUN THESE BASH COMMANDS, COPY AND PASTE
 4. cd LordGPT
 5. pip install -r requirements.txt - Sorry for the long requirements, its my dev machine.
 7. python3 LordGPT.py
+
+MAC BINARY:
+- Coming Soon
 
 MAC USERS
 1. Open Terminal
